@@ -1,4 +1,4 @@
-# Hexed - Image-to-Color-System Compiler
+# HEXED - Image-to-Color-System Compiler
 
 **Hexed** is a Claude skill that extracts structured color systems from images.
 

@@ -145,7 +145,7 @@ Original Next.js version: 0.1.0
 
 ## Author
 
-Created by [Heathen](https://x.com/heathenft))
+Created by [Heathen](https://x.com/heathenft)
 
 Built in [Mirra](https://getmirra.app)
 

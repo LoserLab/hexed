@@ -1,0 +1,45 @@
+# Hexed
+
+> Image-to-color-system compiler. Extracts structured color palettes from screenshots and images. Outputs core colors, neutral ramps, semantic colors, and light/dark UI themes. Exports to CSS variables, Tailwind config, and Figma tokens.
+
+## What it does
+
+Accepts 1-5 images (PNG, JPG, WebP). Extracts dominant colors via histogram analysis. Builds a complete design system: core colors (primary, secondary, accent), 10-step neutral ramp, semantic colors (success, warning, error, info), and light/dark theme tokens.
+
+## Usage
+
+```python
+from hexed_compiler import compile_from_images
+result = compile_from_images(image_paths, mode='ui_first')
+color_system = result['color_system']
+```
+
+Modes: `ui_first` (default, optimized for product UI) or `brand_first` (optimized for marketing).
+
+## Exports
+
+```python
+from hexed_exports import export_css_variables, export_tailwind_config, export_figma_tokens
+
+css = export_css_variables(color_system)
+tailwind = export_tailwind_config(color_system)
+figma = export_figma_tokens(color_system)
+```
+
+## Algorithm
+
+1. Resize images to 768px max dimension
+2. Quantize colors into 24-step buckets
+3. Build histogram, rank by frequency
+4. Pick top 8 distinct colors (40+ RGB distance)
+5. Map to structured system roles
+
+## Part of a suite
+
+Hexed (colors) + Specimen (typography) + Gridlock (layout) + Eyes Peeled (accessibility) + Devourer (components)
+
+Pipeline: Screenshot → Hexed + Specimen + Gridlock → Eyes Peeled → Devourer → Production components
+
+## Author
+
+Created by Heathen
